@@ -5,14 +5,16 @@ import thunk from 'redux-thunk';
 import {Provider, connect} from 'react-redux';
 import {reducer} from '../reducers';
 import SmurfList from "./SmurfList";
+import Form from "./Form";
 
-const App = (props) => {
+const App = () => {
   const store = createStore(reducer, applyMiddleware(thunk));
 
   return (
     <Provider store={store}>
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
+        <Form />
         <SmurfList />
       </div>
     </Provider>

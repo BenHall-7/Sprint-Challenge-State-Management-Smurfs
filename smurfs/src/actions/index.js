@@ -15,3 +15,11 @@ export const fetchSmurfs = () => dispatch => {
             dispatch({type: FETCH_SMURFS_FAIL});
         });
 }
+
+export const addSmurf = (name, age, height) => dispatch => {
+    axios.post("http://localhost:3333/smurfs", { name, age, height })
+        .then(({data}) => {
+            dispatch({type: FETCH_SMURFS_SUCCEED, payload: data});
+        })
+        .catch(console.log);
+}
