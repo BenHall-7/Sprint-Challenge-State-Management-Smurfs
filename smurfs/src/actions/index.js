@@ -23,3 +23,11 @@ export const addSmurf = (name, age, height) => dispatch => {
         })
         .catch(console.log);
 }
+
+export const setSmurf = (id, name, age, height) => dispatch => {
+    axios.put(`http://localhost:3333/smurfs/${id}`, { name, age, height })
+        .then(({data}) => {
+            dispatch({type: FETCH_SMURFS_SUCCEED, payload: data})
+        })
+        .catch(console.log);
+}
