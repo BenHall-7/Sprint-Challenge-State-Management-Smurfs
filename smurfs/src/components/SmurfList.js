@@ -18,7 +18,7 @@ const SmurfList = ({smurfs, is_fetching, error, fetchSmurfs}) => {
 
     return (
         <div className="smurfs">
-            {smurfs.map((smurf, index) => <Smurf smurf={smurf} key={index}/>)}
+            {smurfs.map(smurf => <Smurf smurf={smurf} key={smurf.id}/>)}
         </div>
     )
 }
